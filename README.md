@@ -15,5 +15,11 @@ Test cases:
    $\rightarrow$<b> Solution </b>: replace all geom `cylinder` with `capsule`
 2. <b> Issue </b>: Set initial position: need to start from correct initial joint position: ***(1)*** is correct, ***(2)*** is incorrect.<br>
    ![](<figs/initial_qpos_1.png>) ![](<figs/initial_qpos_2.png>)
+   $\rightarrow$ <b> Cause </b>: Incorrect initial joint AND body positions (need both body and joint) <br>
+   $\rightarrow$<b> Solution </b>: https://github.com/Farama-Foundation/Metaworld/blob/master/metaworld/envs/mujoco/sawyer_xyz/v2/sawyer_reach_v2.py#L113
+   ```python
+   # Reset hand position: MetaWorld's self._reset_hand()
+   
+   ```
 
    
